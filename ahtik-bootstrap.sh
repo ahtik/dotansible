@@ -146,7 +146,7 @@ sudo add-apt-repository ppa:webupd8team/rhythmbox
 sudo add-apt-repository ppa:ubuntu-x-swat/x-updates
 sudo ppa-purge ppa:ubuntu-x-swat/x-updates
 
-sudo apt-get install xfce4-utils xfce4-cpugraph-plugin xfce4-datetime-plugin xfce4-dict xfce4-indicator-plugin xfce4-netload-plugin xfce4-power-manager xfce4-quicklauncher-plugin xfce4-screenshooter xfce4-systemload-plugin moreutils gitg git-cola gitk giggle git-gui openvpn tofrodos ruby apcalc xloadimage virtualbox-guest-additions-iso virtualbox dkms rar acroread ttf-ancient-fonts lsb-core estonianidcard
+sudo apt-get install xfce4-utils xfce4-cpugraph-plugin xfce4-datetime-plugin xfce4-dict xfce4-indicator-plugin xfce4-netload-plugin xfce4-power-manager xfce4-quicklauncher-plugin xfce4-screenshooter xfce4-systemload-plugin moreutils gitg git-cola gitk giggle git-gui openvpn tofrodos ruby apcalc xloadimage virtualbox-guest-additions-iso virtualbox dkms rar acroread ttf-ancient-fonts lsb-core estonianidcard ruby-full ruby-dev
 
 #install latest from https://01.org/linuxgraphics/downloads
 
