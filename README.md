@@ -19,7 +19,7 @@ TODO
 
 Authors
 --------
-Ahti Kitsik - @ahtik https://github.com/ahtik http://ahtik.com
+Ahti Kitsik - [@ahtik](http://twitter.com/ahtik) https://github.com/ahtik http://ahtik.com
 
 
 
