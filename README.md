@@ -17,3 +17,9 @@ Updating
 --------
 TODO
 
+Authors
+--------
+Ahti Kitsik - @ahtik https://github.com/ahtik http://ahtik.com
+
+
+
