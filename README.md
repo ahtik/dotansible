@@ -13,6 +13,11 @@ Building from scratch
 ---------------------
 TODO
 
+TODO
+----
+Create script to have automated apple wireless keyboard detection
+http://www.organicdesign.co.nz/Apple_wireless_keyboard_on_Linux
+
 Updating
 --------
 TODO
