@@ -5,21 +5,13 @@
 # packages
 
 # Starting openvpn
-sudo openvpn --config /home/ahtik/vpn/xxx.ovpn&
-
-wget --no-check-certificate https://download.01.org/gfx/RPM-GPG-KEY-ilg ; \
-sudo rpm --import RPM-GPG-KEY-ilg
-
-wget --no-check-certificate https://download.01.org/gfx/RPM-GPG-KEY-ilg-2 -O - | \
-sudo apt-key add -
-
+# REPOS
 sudo add-apt-repository ppa:gwendal-lebihan-dev/cinnamon-stable
 sudo add-apt-repository ppa:krytarik/tuxgarage
 sudo add-apt-repository ppa:gnome-terminator
 sudo apt-add-repository ppa:alexmurray/indicator-sensors
 sudo add-apt-repository ppa:atareao/atareao
 sudo add-apt-repository ppa:yubico/stable
-
 ppa:thebernmeister/ppa
 ppa:kilian/f.lux
 ppa:geod/ppa-geod
@@ -27,17 +19,14 @@ ppa:mozillateam/thunderbird-next
 ppa:kubuntu-ppa/backports
 add-apt-repository ppa:no1wantdthisname/ppa
 add-apt-repository ppa:no1wantdthisname/openjdk-fontfix
+wget --no-check-certificate https://download.01.org/gfx/RPM-GPG-KEY-ilg ; \
+sudo rpm --import RPM-GPG-KEY-ilg
 
-sudo apt-get update && sudo apt-get install kubuntu-desktop
-
+# PACKAGES
 indicator-sensors my-weather-indicator gtk2-engines-pixbuf indicator-virtual-box fluxgui indicator-workspaces unity-2d-settings compizconfig-settings-manager ppa-purge gconf-editor compiz-fusion-plugins-extra git python-pip pavucontrol paprefs devilspie gdevilspie xdotool conky tint2 xfonts-terminus enigmail thunderbird fontconfig-infinality gnome-tweak-tool unclutter darc dnsutils mesa-utils libxinerama-dev
 sudo apt-get install libxxf86vm-dev libxinerama-dev libxss-dev python-yubico
 
-# Run
-# cabal install cabal-install
-# to update haskell libs
-sudo apt-get install libghc-x11-dev
-
+xchat rxvt-unicode pidgin transmission terminator autojump mc vim python3  kupfer zsh dropbox dkms virtualbox
 
 sudo apt-get install bluetooth bluez-compat bluez-utils blueman
 
@@ -48,6 +37,20 @@ aptitude install libssl-dev zlib1g-dev libvorbis-dev libtool
       aptitude install libgstreamer-plugins-base0.10-0 libgstreamer0.10-dev # For GStreamer backend
         aptitude install libao-dev # For libao backends
 
+# Intel graphics
+wget --no-check-certificate https://download.01.org/gfx/RPM-GPG-KEY-ilg-2 -O - | \
+sudo apt-key add -
+
+#OPENVPN conf
+sudo openvpn --config /home/ahtik/vpn/xxx.ovpn&
+
+# For xmonad & haskell
+sudo apt-get install libghc-x11-dev
+# Run
+# cabal install cabal-install
+# to update haskell libs
+
+# ZSH
 chsh -s /bin/zsh
 
 # fix expose
@@ -59,14 +62,29 @@ sudo apt-get purge unity-lens-video unity-lens-shopping unity-lens-photos unity-
 download skype from http://www.skype.com/en/download-skype/skype-for-linux/downloading/?type=ubuntu64
 install lastpass from https://lastpass.com/misc_download.php
 
-xchat rxvt-unicode pidgin transmission terminator autojump mc vim python3  kupfer zsh dropbox dkms virtualbox
 
-
+# FONTS
 wget http://webupd8.googlecode.com/files/install-google-fonts
 chmod +x install-google-fonts
 
+# Install SourceCodePro fonts
+#!/bin/bash
+FONT_NAME="SourceCodePro"
+URL="http://sourceforge.net/projects/sourcecodepro.adobe/files/latest/download"
+
+mkdir /tmp/adodefont
+cd /tmp/adodefont
+wget ${URL} -O ${FONT_NAME}.zip
+unzip -o -j ${FONT_NAME}.zip
+mkdir -p ~/.fonts
+cp *.otf ~/.fonts
+fc-cache -f -v
+
+
 # ID kaardi tugi
 sudo apt-get install esteid
+sudo add-apt-repository https://installer.id.ee/media/ubuntu/
+
 
 sudo apt-get remove qdigidoc mozilla-esteid libdigidocpp0 thunderbird-esteid libdigidoc libdigidoc-dev libdigidocpp libdigidocpp-dev libdigidocpp
 sudo dpkg -r libdigidoc2
@@ -89,19 +107,16 @@ update-alternatives --install /usr/bin/java java /usr/lib/jvm/java-7-oracle/bin/
 update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/java-7-oracle/bin/javac 1065
 
 
-/etc/apt/sources.list
-deb https://installer.id.ee/media/ubuntu/ precise main
-deb http://ppa.launchpad.net/esteid/ppa/ubuntu precise main
-deb-src http://ppa.launchpad.net/esteid/ppa/ubuntu precise main
+# /etc/apt/sources.list
+# deb https://installer.id.ee/media/ubuntu/ precise main
+# deb http://ppa.launchpad.net/esteid/ppa/ubuntu precise main
+# deb-src http://ppa.launchpad.net/esteid/ppa/ubuntu precise main
 
 
 # Update kernel
 wget -c kernel.ubuntu.com/~kernel-ppa/mainline/v3.10-saucy/linux-headers-3.10.0-031000_3.10.0-031000.201306301935_all.deb
-
 wget -c kernel.ubuntu.com/~kernel-ppa/mainline/v3.10-saucy/linux-headers-3.10.0-031000-generic_3.10.0-031000.201306301935_amd64.deb
-
 wget -c kernel.ubuntu.com/~kernel-ppa/mainline/v3.10-saucy/linux-image-3.10.0-031000-generic_3.10.0-031000.201306301935_amd64.deb
-
 $ wget -c kernel.ubuntu.com/~kernel-ppa/mainline/v3.11-saucy/linux-headers-3.11.0-031100_3.11.0-031100.201309021735_all.deb
 $ wget -c kernel.ubuntu.com/~kernel-ppa/mainline/v3.11-saucy/linux-headers-3.11.0-031100-generic_3.11.0-031100.201309021735_amd64.deb
 $ wget -c kernel.ubuntu.com/~kernel-ppa/mainline/v3.11-saucy/linux-image-3.11.0-031100-generic_3.11.0-031100.201309021735_amd64.deb
@@ -109,19 +124,6 @@ $ wget -c kernel.ubuntu.com/~kernel-ppa/mainline/v3.11-saucy/linux-image-3.11.0-
 sudo dpkg -i *.deb
 sudo dpkg -i /opt/cache/kernel-3.11/*.deb
 
-
-# Install SourceCodePro
-#!/bin/bash
-FONT_NAME="SourceCodePro"
-URL="http://sourceforge.net/projects/sourcecodepro.adobe/files/latest/download"
-
-mkdir /tmp/adodefont
-cd /tmp/adodefont
-wget ${URL} -O ${FONT_NAME}.zip
-unzip -o -j ${FONT_NAME}.zip
-mkdir -p ~/.fonts
-cp *.otf ~/.fonts
-fc-cache -f -v
 
 
 gsettings set org.gnome.desktop.interface menubar-accel ""
@@ -133,10 +135,9 @@ gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 2
 ## OPENBOX section
 sudo apt-get install openbox tint2 xcompmgr docky obconf synapse thunar thunar-archive-plugin thunar-media-tags-plugin nitrogen parcellite
 
-sudo add-apt-repository ppa:xubuntu-dev/xfce-4.10
-sudo add-apt-repository ppa:xubuntu-dev/xfce-4.12
+# sudo add-apt-repository ppa:xubuntu-dev/xfce-4.10
+# sudo add-apt-repository ppa:xubuntu-dev/xfce-4.12
 
-sudo add-apt-repository https://installer.id.ee/media/ubuntu/
 
 #rhythmbox update to fix the memory leak
 sudo add-apt-repository ppa:edgar2705/my-ppa
@@ -185,7 +186,7 @@ sudo apt-get update
 sudo apt-get install adwaita-x-dark-theme adwaita-x-light-theme
 sudo apt-get install htop
 
-# Caps lock as ctrl
+# Map Caps lock as ctrl
 /usr/bin/setxkbmap -option '' -option 'ctrl:nocaps'
 https://github.com/amix/vimrc
 https://github.com/sgerrand/xfce4-terminal-colors-solarized
@@ -254,7 +255,7 @@ sudo apt-get install  kde-gtk-config
 ttf-mscorefonts
 
  gconftool --type boolean --set /apps/nautilus/preferences/show_desktop false
- 
+
 #NodeJS
 sudo apt-get install nodejs npm nodejs-legacy
 
